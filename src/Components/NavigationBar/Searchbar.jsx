@@ -36,7 +36,7 @@ const SearchBar = () => {
           Customer Service <span className="text-red-500 ms-3"> +088 900 6690</span>
         </div>
         <select className="border border-gray-300 rounded-md px-2 py-1">
-          <option value="US"><img src="https://wphix.com/html/blackwood-prv/blackwood/assets/img/icon/flag.png" alt="" /> USA</option>
+          <option value="US">🇺🇸 USA</option>
           <option value="IN">🇮🇳 India</option>
           <option value="BD">🇧🇩 Bangladesh</option>
           <option value="PK">🇵🇰 Pakistan</option>

@@ -1,0 +1,68 @@
+/* BigCarousel.css */
+.carousel-container {
+  width: 100%;
+  max-width: 100%px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.carousel-slide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 650px; /* Set the height of the carousel */
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill; /* Make the image fit within the container */
+  object-position: bottom;
+}
+
+.carousel-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 10px;
+  color: white;
+  width: 80%;
+  font-size: 75px;
+  font-weight: bold;
+  text-shadow: black 4px 6px 7px;
+}
+.carousel-text2 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 10px;
+  color: white;
+  width: 80%;
+  font-size: 25px;
+  font-weight: lighter;
+  text-shadow: black 2px 4px 4px;
+}
+
+.arrow-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.arrow-left {
+  left: 20px;
+}
+
+.arrow-right {
+  right: 20px;
+}

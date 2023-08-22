@@ -3,6 +3,7 @@ import { BsCreditCard, BsBoxSeam, BsCart3, BsSuitHeart } from "react-icons/bs";
 import { FaRegUserCircle } from "react-icons/fa";
 import { TbArrowsShuffle } from "react-icons/tb";
 import SearchBar from "./Searchbar";
+import NavItems from "./Navitems";
 const NavigationBar = () => {
   return (
     <div className="flex justify-center items-center flex-col">
