@@ -8,7 +8,7 @@ const CountdownTimer = () => {
   };
 
   const targetDate = new Date(); // Current date
-  targetDate.setMonth(targetDate.getMonth() + 5); // Add 5 months to the current date
+  targetDate.setMonth(targetDate.getMonth() + 2); // Add 5 months to the current date
 
   const [remainingTime, setRemainingTime] = useState(
     calculateRemainingTime(targetDate)

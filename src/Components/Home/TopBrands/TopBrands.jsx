@@ -32,7 +32,7 @@ const TopBrands = () => {
   ];
 
   return (
-    <div className="flex flex-col justify-center mx-auto " style={{ width: "1280px" }}>
+    <div className="flex flex-col justify-center mx-auto mt-20 mb-20 " style={{ width: "1280px" }}>
       <div className="mx-auto text-3xl font-extrabold mb-5 ">our top brands</div>
       <Slider {...settings}>
         {imageUrls.map((imageUrl, index) => (

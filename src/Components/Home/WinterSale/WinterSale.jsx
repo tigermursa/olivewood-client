@@ -4,8 +4,8 @@ import CountdownTimer from "./CountdownTimer";
 
 const WinterSale = () => {
   return (
-    <div className=" mx-auto  flex justify-center p-10">
-      <div className="flex items-center">
+    <div className=" mx-auto  flex justify-center items-center p-10 mt-20 mb-20">
+      <div className="flex justify-center items-center">
         <div>
           <img
             src="https://static.vecteezy.com/system/resources/previews/011/995/364/original/winter-animals-clipart-animals-merry-christmas-png.png"

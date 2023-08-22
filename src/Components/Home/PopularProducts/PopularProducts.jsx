@@ -23,7 +23,7 @@ const PopularProducts = () => {
   };
 
   return (
-    <div className="popular-products p-3 mx-auto text-center mb-20 cursor-pointer " style={{ width: "1280px" }}>
+    <div className="popular-products p-3 mx-auto text-center mt-20 mb-20 cursor-pointer " style={{ width: "1280px" }}>
       <h2 className="text-3xl font-extrabold mb-6">Popular Products</h2>
       <Slider {...sliderSettings}>
         {products.map((product) => (
