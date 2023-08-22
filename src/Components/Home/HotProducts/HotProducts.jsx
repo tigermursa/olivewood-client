@@ -1,25 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-const HotProductsCard = ({ product }) => {
-  const imageStyle = {
-    width: "150px", // Adjust this value as needed
-    height: "150px", // Adjust this value as needed
+import HotProductCard from "./HotProductCard";
+
+const HotProducts = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("/data.json")
+      .then((response) => response.json())
+      .then((data) => setProducts(data.filter(product => product.id >= 5 && product.id <= 15)))
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5, // Adjust the number of products shown
+    slidesToScroll: 1,
   };
 
   return (
-    <div className="product-card flex flex-col items-center">
-      <img
-        src={product.product.image}
-        alt={product.product.title}
-              style={imageStyle}
-              className="object-scale-down"
-      />
-      <h3 className="text-orange-500">{product.product.title}</h3>
-      <p>Category: {product.product.category}</p>
-          <p>Price: ${product.product.price}</p>
-          <button className="btn btn-outline btn-sm mt-3">Add to cart</button>
+    <div className="popular-products p-3 mx-auto text-center mb-5 ">
+      <h2 className="text-3xl font-extrabold mb-6">Hot Products</h2>
+      <Slider {...sliderSettings}>
+        {products.map((product) => (
+          <div key={product.id} className="border p-2">
+            <HotProductCard product={product} />
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 };
 
-export default HotProductsCard;
+export default HotProducts;

@@ -3,6 +3,7 @@ import React from "react";
 import BigCarousel from "./Carousel/BigCarousel";
 import TopBrands from "./TopBrands/TopBrands";
 import PopularProducts from "./PopularProducts/PopularProducts";
+import HotProducts from "./HotProducts/HotProducts";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <BigCarousel />
       <TopBrands />
       <PopularProducts />
+      <HotProducts />
     </div>
   );
 };
