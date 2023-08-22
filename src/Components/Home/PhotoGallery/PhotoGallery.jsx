@@ -1,7 +1,6 @@
 import React from "react";
 import Gallery from "react-photo-gallery";
-
-
+import "./PhotoGallery.css"
 const photos = [
   {
     src: "https://images.unsplash.com/photo-1632119289059-793dd347950f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80",
@@ -9,7 +8,7 @@ const photos = [
     height: 3,
   },
   {
-    src: "https://images.unsplash.com/photo-1632119289059-793dd347950f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80",
+    src: "https://images.unsplash.com/photo-1632829882891-5047ccc421bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80",
     width: 4,
     height: 3,
   },
@@ -31,11 +30,11 @@ const photos = [
 ];
 
 const PhotoGallery = () => {
-  return (
-    <div className="my-gallery mt-10 mb-10">
-      <Gallery photos={photos} />
-    </div>
-  );
-};
+    return (
+      <div className="my-gallery mt-10 mb-10 cursor-pointer">
+        <Gallery photos={photos} className="grid grid-cols-2 gap-4" />
+      </div>
+    );
+  };
 
 export default PhotoGallery;
