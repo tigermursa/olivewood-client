@@ -14,7 +14,7 @@ const BigCarousel = () => {
       <Carousel
         showThumbs={false} // Hide the small images at the bottom
         showArrows={true} // Hide default arrows
-        autoPlay={false} // Autoplay the carousel
+        autoPlay={true} // Autoplay the carousel
         infiniteLoop={true} // Infinite looping of slides
         interval={5000} // Set autoplay interval (in milliseconds)
       >
