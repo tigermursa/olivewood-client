@@ -2,9 +2,10 @@ import React from "react";
 import { BsCreditCard, BsBoxSeam, BsCart3, BsSuitHeart } from "react-icons/bs";
 import { FaRegUserCircle } from "react-icons/fa";
 import { TbArrowsShuffle } from "react-icons/tb";
+import SearchBar from "./Searchbar";
 const NavigationBar = () => {
   return (
-    <div className="flex justify-center ">
+    <div className="flex justify-center items-center flex-col">
       <div className="navbar bg-base-100 p-8" style={{ width: "1280px" }}>
         <div className="flex-1">
           <a className="btn btn-ghost normal-case text-2xl font-bold font-serif">
@@ -90,6 +91,7 @@ const NavigationBar = () => {
           </div>
         </div>
       </div>
+      <SearchBar />
     </div>
   );
 };
