@@ -24,7 +24,7 @@ const HotProducts = () => {
   };
 
   return (
-    <div className="popular-products p-3 mx-auto text-center mb-5 ">
+    <div className="popular-products p-3 mx-auto text-center mb-5  cursor-pointer" style={{ width: "1280px" }}>
       <h2 className="text-3xl font-extrabold mb-6">Hot Products</h2>
       <Slider {...sliderSettings}>
         {products.map((product) => (
