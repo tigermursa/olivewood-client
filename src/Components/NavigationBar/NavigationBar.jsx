@@ -4,6 +4,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { TbArrowsShuffle } from "react-icons/tb";
 import SearchBar from "./Searchbar";
 import NavItems from "./Navitems";
+import { Link } from "react-router-dom";
 const NavigationBar = () => {
   return (
     <div className="flex justify-center items-center flex-col">
@@ -86,7 +87,7 @@ const NavigationBar = () => {
                 <a>Settings</a>
               </li>
               <li>
-                <a>Logout</a>
+                <Link to = "/login">Login</Link>
               </li>
             </ul>
           </div>
