@@ -9,7 +9,7 @@ const HotProducts = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("/data.json")
+    fetch("https://my-json-server-tigermursa.vercel.app/products/")
       .then((response) => response.json())
       .then((data) => setProducts(data.filter(product => product.id >= 5 && product.id <= 15)))
       .catch((error) => console.error("Error fetching data:", error));

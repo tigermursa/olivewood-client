@@ -7,6 +7,7 @@ import Layout from "./Components/Layout/Layout";
 import Home from "./Components/Home/Home";
 import SignUp from "./Components/SignUp/SignUp";
 import Login from "./Components/Login/Login";
+import ProductDetail from "./Components/ProductDetail/ProductDetail";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/products/:id",
+        element: <ProductDetail />,
       },
     ],
   },

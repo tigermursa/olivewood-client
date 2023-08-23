@@ -6,9 +6,9 @@ import ProductCard from "./ProductCard";
 
 const PopularProducts = () => {
   const [products, setProducts] = useState([]);
-
+console.log(products);
   useEffect(() => {
-    fetch("/data.json")
+    fetch("https://my-json-server-tigermursa.vercel.app/products/")
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error("Error fetching data:", error));
@@ -23,7 +23,10 @@ const PopularProducts = () => {
   };
 
   return (
-    <div className="popular-products p-3 mx-auto text-center mt-20 mb-20 cursor-pointer " style={{ width: "1280px" }}>
+    <div
+      className="popular-products p-3 mx-auto text-center mt-20 mb-20 cursor-pointer "
+      style={{ width: "1280px" }}
+    >
       <h2 className="text-3xl font-extrabold mb-6">Popular Products</h2>
       <Slider {...sliderSettings}>
         {products.map((product) => (
