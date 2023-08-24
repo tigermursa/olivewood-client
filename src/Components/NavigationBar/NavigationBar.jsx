@@ -6,6 +6,7 @@ import SearchBar from "./Searchbar";
 import NavItems from "./Navitems";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { MdOutlineDashboard } from "react-icons/md";
 const NavigationBar = () => {
   const cartProducts = useSelector((state) => state.cart.cart);
   return (
@@ -70,6 +71,14 @@ const NavigationBar = () => {
             </label>
           </div>
           <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle">
+              <Link to="/dashboard/customerslist" className="indicator">
+                <MdOutlineDashboard className="text-2xl" />
+              
+              </Link>
+            </label>
+          </div>
+          <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="">
                 <FaRegUserCircle className=" text-2xl" />
@@ -80,13 +89,10 @@ const NavigationBar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a className="justify-between">
-                  Profile
+                <Link to="/dashboard/customerslist" className="justify-between">
+                  Dashboard
                   <span className="badge">New</span>
-                </a>
-              </li>
-              <li>
-                <a>Settings</a>
+                </Link>
               </li>
               <li>
                 <Link to="/login">Login</Link>
