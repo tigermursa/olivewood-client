@@ -1,9 +1,10 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { AiOutlineDelete } from "react-icons/ai";
-import { remove } from "../Redux/CartSlice";
 
-const Cart = () => {
+import { AiOutlineDelete } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import { remove } from "../../Redux/CartSlice";
+
+const OrderList = () => {
   const cartProducts = useSelector((state) => state.cart.cart);
   const dispatch = useDispatch();
   const removeToCart = (id) => {
@@ -11,7 +12,10 @@ const Cart = () => {
   };
   console.log(cartProducts);
   return (
-    <div className="overflow-x-auto p-4 pb-56 mx-auto" style={{ width: "1280px" }}>
+    <div
+      className="overflow-x-auto p-4 pb-56 mx-auto"
+      style={{ width: "1280px" }}
+    >
       <table className="table">
         {/* head */}
         {cartProducts.length > 0 ? (
@@ -27,8 +31,11 @@ const Cart = () => {
           </thead>
         ) : (
           <tbody>
-            <tr>
-              <td colSpan="7">No items in the cart.</td>
+            <tr
+              className=" mx-auto flex justify-center font-semibold text-3xl 
+            "
+            >
+              <td colSpan="7">No orders yet.</td>
             </tr>
           </tbody>
         )}
@@ -68,4 +75,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default OrderList;

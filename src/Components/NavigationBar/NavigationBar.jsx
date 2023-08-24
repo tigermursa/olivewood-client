@@ -13,9 +13,9 @@ const NavigationBar = () => {
     <div className="flex justify-center items-center flex-col">
       <div className="navbar bg-base-100 p-8" style={{ width: "1280px" }}>
         <div className="flex-1">
-          <a className="btn btn-ghost normal-case text-2xl font-bold font-serif">
+          <Link to ="/" className="btn btn-ghost normal-case text-2xl font-bold font-serif">
             Olive Wood
-          </a>
+          </Link>
           <div className="flex items-center gap-3 me-5 ms-5 ">
             <div>
               <div className="transform transition-transform hover:translate-y-[-10px]">

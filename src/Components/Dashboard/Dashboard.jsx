@@ -2,30 +2,25 @@ import React, { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import "./Dashboard.css";
 import { CgProfile } from "react-icons/cg";
-import { FaUserShield, FaUserTie, FaHome,FaUsers } from "react-icons/fa";
+import { FaUserShield, FaUserTie, FaHome, FaUsers } from "react-icons/fa";
 import {
   MdOutlineAttachMoney,
   MdArrowCircleUp,
   MdOutlineLibraryAdd,
-  MdShield,MdProductionQuantityLimits
+  MdShield,
+  MdProductionQuantityLimits,
 } from "react-icons/md";
 import NavbarForPhone from "./NavbarForPhone/NavbarForPhone";
 
 const Dashboard = () => {
-
   return (
     <div>
       <div className="block md:hidden">
-        <NavbarForPhone/>
+        <NavbarForPhone />
       </div>
       <div className="drawer">
         {/* Add the 'checked' attribute to keep the sidebar open */}
-        <input
-          id="my-drawer"
-          type="checkbox"
-          className="drawer-toggle"
-          checked
-        />
+        <input id="my-drawer" type="checkbox" className="drawer-toggle" checked />
 
         <div className="drawer-content">
           <Outlet />
@@ -37,31 +32,43 @@ const Dashboard = () => {
 
           <ul className="menu p-4 w-80 h-full bg-blue-950 text-white hidden md:block">
             <h1 className="font-bold text-2xl flex items-center gap-2">
-              <MdShield/>
+              <MdShield />
               Admin Dashboard
             </h1>
             <br />
             {/* Sidebar content here */}
             <li>
-              <NavLink to="/dashboard/customerslist">
+              <NavLink
+                to="/dashboard/customerslist"
+                className="hover:text-white"
+              >
                 <FaUsers />
                 Customers List
               </NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/salary">
+              <NavLink
+                to="/dashboard/orders"
+                className="hover:text-white"
+              >
                 <MdOutlineAttachMoney className="text-xl" />
                 Order List
               </NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/productlist">
+              <NavLink
+                to="/dashboard/productlist"
+                className="hover:text-white"
+              >
                 <MdProductionQuantityLimits className="text-xl" />
                 Product List
               </NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/signup">
+              <NavLink
+                to="/dashboard/addporduct"
+                className="hover:text-white"
+              >
                 <MdOutlineLibraryAdd className="text-xl" />
                 Add Product
               </NavLink>
@@ -69,15 +76,19 @@ const Dashboard = () => {
             <div className="divider text-white"></div>
             <hr />
             <li>
-              <NavLink to="/">
-                {" "}
+              <NavLink
+                to="/"
+                className="hover:text-white"
+              >
                 <FaHome />
                 Home
               </NavLink>
-              <NavLink to="/profile">
-                {" "}
+              <NavLink
+                to="/signup"
+                className="hover:text-white"
+              >
                 <CgProfile />
-               Login
+                Add new user
               </NavLink>
             </li>
           </ul>

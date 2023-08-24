@@ -36,7 +36,7 @@ const ProductList = () => {
     }
 
     return (
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto bg-gradient-to-br from-blue-900 to-gray-700 employee-bg font-bold">
         <table className="min-w-full">
           <thead>
             <tr>
