@@ -14,7 +14,7 @@ const NavigationBar = () => {
 
   return (
     <div className="flex justify-center items-center flex-col">
-      <div className="navbar bg-base-100 p-8 md:px-4 pc-width hidden md:block">
+      <div className="navbar bg-base-100 p-8 md:px-4 pc-width hidden md:block md:flex">
         <div className="flex-1">
           <Link
             to="/"
