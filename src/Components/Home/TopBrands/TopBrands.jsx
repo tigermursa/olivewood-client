@@ -8,7 +8,7 @@ const TopBrands = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 6, // Display 5 images at once
+    slidesToShow:  window.innerWidth <= 768 ? 5 : 2,
     slidesToScroll: 1,
     autoplay: true, // Enable autoplay
     autoplaySpeed: 6000, // Autoplay speed in milliseconds (adjust as needed)
@@ -32,7 +32,7 @@ const TopBrands = () => {
   ];
 
   return (
-    <div className="flex flex-col justify-center mx-auto mt-20 mb-20 " style={{ width: "1280px" }}>
+    <div className="flex flex-col justify-center mx-auto mt-20 mb-20 pc-width" >
       <div className="mx-auto text-3xl font-extrabold mb-5 ">our top brands</div>
       <Slider {...settings}>
         {imageUrls.map((imageUrl, index) => (

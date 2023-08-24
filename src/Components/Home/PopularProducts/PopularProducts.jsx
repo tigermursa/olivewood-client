@@ -8,6 +8,7 @@ import { getProducts } from "../../Redux/ProductSlice";
 import { add } from "../../Redux/CartSlice";
 import { Link } from "react-router-dom";
 import { BsEye } from "react-icons/bs";
+import Loader from "../../Loader/Loader";
 const PopularProducts = () => {
   const dispatch = useDispatch();
   const { data: products, status } = useSelector((state) => state.products);
@@ -16,9 +17,7 @@ const PopularProducts = () => {
     dispatch(getProducts());
   }, [dispatch]);
   if (status === "loading") {
-    return (
-      <span className="loading loading-dots loading-lg mt-16 text-pink-300"></span>
-    );
+    return <span className="loading loading-dots loading-lg mt-16 text-pink-300"></span>
   }
   if (status === "error") {
     return (
@@ -37,20 +36,17 @@ const PopularProducts = () => {
     height: "150px", // Adjust this value as needed
   };
   const sliderSettings = {
-    dots: true,
+    dots: window.innerWidth <= 768 ? true : false,
     infinite: true,
     speed: 500,
-    slidesToShow: 5, // Adjust the number of products shown
+    slidesToShow: window.innerWidth <= 768 ? 5 : 2,
     slidesToScroll: 1,
   };
- 
+
   return (
-    <div
-      className="popular-products p-3 mx-auto text-center mt-20 mb-20 cursor-pointer "
-      style={{ width: "1280px" }}
-    >
+    <div className="popular-products p-3 mx-auto text-center mt-20 mb-20 cursor-pointer pc-width ">
       <h2 className="text-3xl font-extrabold mb-6">Popular Products</h2>
-      <Slider {...sliderSettings}>
+      <Slider {...sliderSettings} className="">
         {products.map((product) => (
           <div key={product.id} className="border p-2">
             <div className="product-card flex flex-col items-center">

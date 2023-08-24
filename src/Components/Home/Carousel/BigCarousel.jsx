@@ -26,7 +26,7 @@ const BigCarousel = () => {
           />
           <div className="flex flex-col">
             <p className="carousel-text">Liveable Luxury</p>
-            <p className="carousel-text2">Combining Extraordinary </p>
+            <p className="carousel-text2 hidden md:block">Combining Extraordinary </p>
           </div>
         </div>
         <div className="carousel-slide">
@@ -38,7 +38,7 @@ const BigCarousel = () => {
 
           <div className="flex flex-col">
             <p className="carousel-text">Liveable Luxury</p>
-            <p className="carousel-text2">Combining Extraordinary </p>
+            <p className="carousel-text2 hidden md:block">Combining Extraordinary </p>
           </div>
         </div>
         <div className="carousel-slide">
@@ -50,7 +50,7 @@ const BigCarousel = () => {
 
           <div className="flex flex-col">
             <p className="carousel-text">Liveable Luxury</p>
-            <p className="carousel-text2">Combining Extraordinary </p>
+            <p className="carousel-text2 hidden md:block">Combining Extraordinary </p>
           </div>
         </div>
         <div className="carousel-slide">
@@ -62,7 +62,7 @@ const BigCarousel = () => {
 
           <div className="flex flex-col">
             <p className="carousel-text">Liveable Luxury</p>
-            <p className="carousel-text2">Combining Extraordinary </p>
+            <p className="carousel-text2 hidden md:block">Combining Extraordinary </p>
           </div>
         </div>
         <div className="carousel-slide">
@@ -74,7 +74,7 @@ const BigCarousel = () => {
 
           <div className="flex flex-col">
             <p className="carousel-text">Liveable Luxury</p>
-            <p className="carousel-text2">Combining Extraordinary </p>
+            <p className="carousel-text2 hidden md:block">Combining Extraordinary </p>
           </div>
         </div>
         {/* Add more images and text as needed */}

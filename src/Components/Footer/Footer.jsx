@@ -3,10 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="bg-black  pt-40 pb-32">
-      <footer
-        className="footer p-10 font-semibold mx-auto text-white"
-        style={{ width: "1280px" }}
-      >
+      <footer className="footer p-10 font-semibold mx-auto text-white pc-width">
         <div>
           <span className="footer-title text-yellow-300 ">Services</span>
           <a className="link link-hover">Branding</a>

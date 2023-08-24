@@ -7,46 +7,51 @@ import NavItems from "./Navitems";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { MdOutlineDashboard } from "react-icons/md";
+import "../../App.css";
+
 const NavigationBar = () => {
   const cartProducts = useSelector((state) => state.cart.cart);
+
   return (
     <div className="flex justify-center items-center flex-col">
-      <div className="navbar bg-base-100 p-8" style={{ width: "1280px" }}>
+      <div className="navbar bg-base-100 p-8 md:px-4 pc-width hidden md:block">
         <div className="flex-1">
-          <Link to ="/" className="btn btn-ghost normal-case text-2xl font-bold font-serif">
+          <Link
+            to="/"
+            className="btn btn-ghost normal-case text-xl md:text-2xl font-bold font-serif"
+          >
             Olive Wood
           </Link>
-          <div className="flex items-center gap-3 me-5 ms-5 ">
+          <div className="flex flex-col md:flex-row items-center gap-3 me-5 ms-5 mt-3 md:mt-0">
             <div>
               <div className="transform transition-transform hover:translate-y-[-10px]">
-                <BsCreditCard className="text-5xl text-yellow-600 p-1" />
+                <BsCreditCard className="text-4xl md:text-5xl text-yellow-600 p-1" />
               </div>
             </div>
             <div>
-              <h4 className="font-bold">100% Payments</h4>
-              <h5 className="text-gray-500 text-sm font-semibold">
+              <h4 className="font-bold text-sm md:text-base">100% Payments</h4>
+              <h5 className="text-gray-500 text-xs md:text-sm font-semibold">
                 Monthly Installment
               </h5>
             </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col md:flex-row items-center gap-3 mt-3 md:mt-0">
             <div className="transform transition-transform hover:translate-y-[-10px]">
-              <BsBoxSeam className="text-5xl text-yellow-600 p-1" />
+              <BsBoxSeam className="text-4xl md:text-5xl text-yellow-600 p-1" />
             </div>
             <div>
-              <h4 className="font-bold">14-Day Returns</h4>
-              <h5 className="text-gray-500 text-sm font-semibold">
+              <h4 className="font-bold text-sm md:text-base">14-Day Returns</h4>
+              <h5 className="text-gray-500 text-xs md:text-sm font-semibold">
                 Secure Payments
               </h5>
             </div>
           </div>
         </div>
-        <div className="flex-none">
+        <div className="flex-none mt-4 md:mt-0">
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
               <div className="indicator">
                 <TbArrowsShuffle className="text-2xl" />
-                {/* <span className="badge badge-sm indicator-item bg-red-300 text-white">8</span> */}
               </div>
             </label>
           </div>
@@ -74,7 +79,6 @@ const NavigationBar = () => {
             <label tabIndex={0} className="btn btn-ghost btn-circle">
               <Link to="/dashboard/customerslist" className="indicator">
                 <MdOutlineDashboard className="text-2xl" />
-              
               </Link>
             </label>
           </div>
@@ -101,7 +105,10 @@ const NavigationBar = () => {
           </div>
         </div>
       </div>
-      <SearchBar />
+      <div className=" hidden md:block">
+        {" "}
+        <SearchBar />
+      </div>
     </div>
   );
 };

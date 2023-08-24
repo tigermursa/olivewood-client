@@ -4,10 +4,7 @@ import CountdownTimer from "./CountdownTimer";
 
 const WinterSale = () => {
   return (
-    <div
-      className=" mx-auto  flex justify-center items-center p-10 mt-10 mb-20"
-      style={{ width: "1280px" }}
-    >
+    <div className=" mx-auto  flex justify-center items-center p-10 mt-10 mb-20 pc-width">
       <div className="flex  flex-col justify-center items-center">
         <div className="flex flex-col items-center mb-10">
           <img

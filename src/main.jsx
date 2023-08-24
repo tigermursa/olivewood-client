@@ -17,6 +17,7 @@ import AllCustomers from "./Components/Dashboard/AllCustomers/AllCustomers";
 import ProductList from "./Components/Dashboard/ProductList/ProductList";
 import AddProduct from "./Components/Dashboard/AddProduct/AddProduct";
 import OrderList from "./Components/Dashboard/OrderList/OrderList";
+import NotFound from "./Components/NotFound/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
         element: <OrderList />,
       },
     ],
+  },
+  {
+    path: "*/",
+    element: <NotFound />,
   },
 ]);
 

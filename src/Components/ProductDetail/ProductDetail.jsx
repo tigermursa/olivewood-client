@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios"; // Import Axios
+import Loader from "../Loader/Loader";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true); // Add loading state
 
   useEffect(() => {
     const fetchProduct = () => {
@@ -13,20 +15,27 @@ const ProductDetail = () => {
         .then((response) => {
           if (response.status === 200) {
             setProduct(response.data); // Assuming data is an object representing the product
+            setLoading(false); // Data fetched, loading is done
           } else {
             console.error("Failed to fetch product data");
+            setLoading(false); // Loading should still be set to false in case of an error
           }
         })
         .catch((error) => {
           console.error("Error fetching product data:", error);
+          setLoading(false); // Loading should be set to false in case of an error
         });
     };
 
     fetchProduct();
   }, [id]);
 
+  if (loading) {
+    return <Loader />;
+  }
+
   if (!product) {
-    return <p>Loading...</p>;
+    return <p>No product found.</p>;
   }
 
   return (
@@ -49,7 +58,9 @@ const ProductDetail = () => {
         <p className="text-gray-700 mb-2">{product.product.size}</p>
         <p className="text-gray-700 mb-4">{product.product.description}</p>
         <button className="btn btn-outline btn-sm mt-3">Add to cart</button>
-        <button className="btn btn-outline btn-sm mt-3 ms-3">Add to favourite</button>
+        <button className="btn btn-outline btn-sm mt-3 ms-3">
+          Add to favourite
+        </button>
       </div>
     </div>
   );

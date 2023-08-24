@@ -36,7 +36,7 @@ const HotProducts = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 5, // Adjust the number of products shown
+    slidesToShow: window.innerWidth <= 768 ? 5 : 2,
     slidesToScroll: 1,
   };
   const imageStyle = {
@@ -45,8 +45,8 @@ const HotProducts = () => {
   };
   return (
     <div
-      className="popular-products p-3 mx-auto text-center mb-5  cursor-pointer"
-      style={{ width: "1280px" }}
+      className="popular-products p-3 mx-auto text-center mb-5  cursor-pointer pc-width"
+      
     >
       <Slider {...sliderSettings}>
         {products.map((product) => (

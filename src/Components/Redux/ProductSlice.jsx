@@ -1,17 +1,22 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const initialState = {
   data: [],
   status: "idle",
 };
 
-const ProductSlice = createSlice({
+export const getProducts = createAsyncThunk("products/get", async () => {
+  const response = await axios.get(
+    "https://my-json-server-tigermursa.vercel.app/products/"
+  );
+  return response.data;
+});
+
+const productSlice = createSlice({
   name: "product",
   initialState,
   reducers: {
-    // fetchProducts(state, action) {
-    //   state.data = action.payload;
-    // },
   },
   extraReducers: (builder) => {
     builder
@@ -28,12 +33,5 @@ const ProductSlice = createSlice({
   },
 });
 
-export const { fetchProducts } = ProductSlice.actions;
-export default ProductSlice.reducer;
-export const getProducts = createAsyncThunk("products/get", async () => {
-  const data = await fetch(
-    "https://my-json-server-tigermursa.vercel.app/products/"
-  );
-  const result = await data.json();
-  return result;
-});
+export const { fetchProducts } = productSlice.actions;
+export default productSlice.reducer;

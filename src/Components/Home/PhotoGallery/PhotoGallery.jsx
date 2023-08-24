@@ -31,7 +31,7 @@ const photos = [
 
 const PhotoGallery = () => {
     return (
-      <div className="my-gallery mt-10 mb-10 cursor-pointer mx-auto" style={{ width: "1280px" }}>
+      <div className="my-gallery mt-10 mb-10 cursor-pointer mx-auto pc-width">
         <Gallery photos={photos} className="grid grid-cols-2 gap-4" />
       </div>
     );
