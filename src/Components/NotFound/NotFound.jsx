@@ -7,7 +7,7 @@ const NotFound = () => {
       <p className="text-white text-5xl mb-12 font-bold">Page Not Found</p>
       <img
         className="w-64 h-auto mb-8 rounded-full"
-        src="/43391-404-error-page-not-found-confused-robot.gif"
+        src=" https://www.sunflowerhospital.in/assets/img/bg/404-error-dribbble-800x600.gif "
         alt="404 GIF"
       />
       <p className="text-white text-2xl text-center">

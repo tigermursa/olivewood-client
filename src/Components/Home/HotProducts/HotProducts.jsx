@@ -36,7 +36,7 @@ const HotProducts = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: window.innerWidth <= 768 ? 5 : 2,
+    slidesToShow: window.innerWidth <= 768 ? 2 : 5,
     slidesToScroll: 1,
   };
   const imageStyle = {

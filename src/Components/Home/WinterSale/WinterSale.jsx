@@ -18,7 +18,7 @@ const WinterSale = () => {
             <CountdownTimer />
           </div>
         </div>
-        <div className="">
+        <div className=" hidden md:block">
           <HotProducts />
         </div>
       </div>
