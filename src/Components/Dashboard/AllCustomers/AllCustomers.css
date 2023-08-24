@@ -1,0 +1,73 @@
+.customModalStyles {
+  width: 350px;
+  height: 440px;
+  margin: auto;
+  color: aliceblue;
+  padding: 20px;
+  margin-top: 50px;
+  border-radius: 15px;
+  box-shadow: 4px 6px 8px;
+  background: linear-gradient(
+    to bottom,
+    #00008b,
+    #530353
+  ); /* Gradient from deep blue to purple */
+}
+/* Define modal entrance animation */
+.modal-transition-enter {
+  opacity: 0;
+  transform: scale(0.8);
+}
+.modal-transition-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Define modal exit animation */
+.modal-transition-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+.modal-transition-exit-active {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Additional styles */
+.overlayStyles {
+  /* Define overlay styles */
+}
+
+.modal-content {
+  /* Define modal content styles */
+}
+
+.closeButton {
+  /* Define close button styles */
+}
+
+.employee-bg {
+  height: 100vh;
+}
+
+@media screen and (max-width: 767px) {
+  .display-none-in-phone {
+    display: none;
+  }
+  .customModalStyles {
+    width: 350px;
+    height: 550px;
+    margin: auto;
+    padding: 15px;
+    margin-top: 90px;
+  }
+  .w-of-salary {
+    width: 410px;
+    margin-left: 5px;
+  }
+  .employee-bg {
+    height: 120vh;
+  }
+}

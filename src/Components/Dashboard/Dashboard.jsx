@@ -55,7 +55,7 @@ const Dashboard = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/topattendance">
+              <NavLink to="/dashboard/productlist">
                 <MdProductionQuantityLimits className="text-xl" />
                 Product List
               </NavLink>

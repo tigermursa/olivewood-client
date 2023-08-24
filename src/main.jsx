@@ -14,6 +14,7 @@ import store from "../src/Components/Redux/store";
 import Cart from "./Components/Cart/Cart";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import AllCustomers from "./Components/Dashboard/AllCustomers/AllCustomers";
+import ProductList from "./Components/Dashboard/ProductList/ProductList";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/customerslist",
         element: <AllCustomers />,
+      },
+      {
+        path: "/dashboard/productlist",
+        element: <ProductList />,
       },
     ],
   },
