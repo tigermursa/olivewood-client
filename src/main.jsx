@@ -12,6 +12,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { Provider } from "react-redux";
 import store from "../src/Components/Redux/store";
 import Cart from "./Components/Cart/Cart";
+import Dashboard from "./Components/Dashboard/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,11 @@ const router = createBrowserRouter([
         element: <Cart />,
       },
     ],
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+    children: [{}],
   },
 ]);
 
