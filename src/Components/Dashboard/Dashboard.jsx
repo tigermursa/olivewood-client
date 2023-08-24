@@ -1,10 +1,23 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import "./Dashboard.css";
+import { CgProfile } from "react-icons/cg";
+import { FaUserShield, FaUserTie, FaHome,FaUsers } from "react-icons/fa";
+import {
+  MdOutlineAttachMoney,
+  MdArrowCircleUp,
+  MdOutlineLibraryAdd,
+  MdShield,MdProductionQuantityLimits
+} from "react-icons/md";
+import NavbarForPhone from "./NavbarForPhone/NavbarForPhone";
 
 const Dashboard = () => {
+
   return (
-    <div className="pt-12">
+    <div>
+      <div className="block md:hidden">
+        <NavbarForPhone/>
+      </div>
       <div className="drawer">
         {/* Add the 'checked' attribute to keep the sidebar open */}
         <input
@@ -13,21 +26,59 @@ const Dashboard = () => {
           className="drawer-toggle"
           checked
         />
+
         <div className="drawer-content">
-          {/* Page content here */} <Outlet />
+          <Outlet />
+
+          {/* Page content here */}
         </div>
-        <div className="drawer-side">
+        <div className="side-drawer-navigation">
           <label htmlFor="my-drawer" className=""></label>
-          <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+
+          <ul className="menu p-4 w-80 h-full bg-blue-950 text-white hidden md:block">
+            <h1 className="font-bold text-2xl flex items-center gap-2">
+              <MdShield/>
+              Admin Dashboard
+            </h1>
+            <br />
             {/* Sidebar content here */}
             <li>
-              <NavLink to="/dashboard/allemployees">All Employees</NavLink>
+              <NavLink to="/dashboard/customerslist">
+                <FaUsers />
+                Customers List
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/salary">Salary</NavLink>
+              <NavLink to="/dashboard/salary">
+                <MdOutlineAttachMoney className="text-xl" />
+                Order List
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/topattendance">Top Attendance</NavLink>
+              <NavLink to="/dashboard/topattendance">
+                <MdProductionQuantityLimits className="text-xl" />
+                Product List
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/dashboard/signup">
+                <MdOutlineLibraryAdd className="text-xl" />
+                Add Product
+              </NavLink>
+            </li>
+            <div className="divider text-white"></div>
+            <hr />
+            <li>
+              <NavLink to="/">
+                {" "}
+                <FaHome />
+                Home
+              </NavLink>
+              <NavLink to="/profile">
+                {" "}
+                <CgProfile />
+               Login
+              </NavLink>
             </li>
           </ul>
         </div>
