@@ -1,8 +1,31 @@
-// src/Login.js
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth"; // Import necessary Firebase authentication functions
+import { AuthContext } from "../Provider/AuthProvider"; // Assuming you have your AuthContext defined
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const auth = getAuth(); // Get the Firebase auth instance
+  const authContext = useContext(AuthContext); // You can use your AuthContext for other operations as well
+
+  const handleSignIn = () => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log("User signed in:", user);
+        Swal.fire({
+          icon: "success",
+          title: "Login Successful",
+          text: "You have been successfully logged in.",
+        });
+        // You can also set user data in your AuthContext if needed
+      })
+      .catch((error) => {
+        console.error("Error signing in:", error.message);
+      });
+  };
   return (
     <div className="flex flex-col justify-center items-center mt-20 mb-44">
       <h2 className="text-4xl font-bold pb-3">Sign in</h2>
@@ -21,6 +44,8 @@ const Login = () => {
               id="email"
               type="email"
               placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
@@ -36,12 +61,15 @@ const Login = () => {
               id="password"
               type="password"
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="flex items-center justify-between">
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="button"
+              onClick={handleSignIn}
             >
               Sign in
             </button>

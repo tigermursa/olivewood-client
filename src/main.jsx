@@ -18,6 +18,7 @@ import ProductList from "./Components/Dashboard/ProductList/ProductList";
 import AddProduct from "./Components/Dashboard/AddProduct/AddProduct";
 import OrderList from "./Components/Dashboard/OrderList/OrderList";
 import NotFound from "./Components/NotFound/NotFound";
+import AuthProvider from "./Components/Provider/AuthProvider";
 
 const router = createBrowserRouter([
   {
@@ -76,9 +77,11 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <ToastContainer />
-      <RouterProvider router={router} />
-    </Provider>
+    <AuthProvider>
+      <Provider store={store}>
+        <ToastContainer />
+        <RouterProvider router={router} />
+      </Provider>{" "}
+    </AuthProvider>
   </React.StrictMode>
 );
