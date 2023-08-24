@@ -1,4 +1,6 @@
 import React from "react";
+import { BsEye } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const HotProductCard = ({ product }) => {
   const imageStyle = {
@@ -20,7 +22,15 @@ const HotProductCard = ({ product }) => {
       <h3 className="text-orange-500">{product.product.title}</h3>
       <p>Category: {product.product.category}</p>
       <p>Price: ${product.product.price}</p>
-      <button className="btn btn-outline btn-sm mt-3">Add to cart</button>
+      <div className="flex gap-3 items-center">
+        <button className="btn btn-outline btn-sm mt-3">Add to cart</button>
+        <Link
+          to={`/products/${product.id}`}
+          className="btn btn-outline btn-sm mt-3"
+        >
+          <BsEye />
+        </Link>
+      </div>
     </div>
   );
 };

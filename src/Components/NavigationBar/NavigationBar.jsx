@@ -5,7 +5,9 @@ import { TbArrowsShuffle } from "react-icons/tb";
 import SearchBar from "./Searchbar";
 import NavItems from "./Navitems";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 const NavigationBar = () => {
+  const cartProducts = useSelector((state) => state.cart.cart);
   return (
     <div className="flex justify-center items-center flex-col">
       <div className="navbar bg-base-100 p-8" style={{ width: "1280px" }}>
@@ -59,12 +61,12 @@ const NavigationBar = () => {
           </div>
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
-              <div className="indicator">
+              <Link to="/cart" className="indicator">
                 <BsCart3 className="text-2xl" />
                 <span className="badge badge-sm indicator-item bg-red-300 text-white">
-                  10
+                  {cartProducts.length}
                 </span>
-              </div>
+              </Link>
             </label>
           </div>
           <div className="dropdown dropdown-end">
@@ -87,7 +89,7 @@ const NavigationBar = () => {
                 <a>Settings</a>
               </li>
               <li>
-                <Link to = "/login">Login</Link>
+                <Link to="/login">Login</Link>
               </li>
             </ul>
           </div>

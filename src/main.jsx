@@ -8,6 +8,10 @@ import Home from "./Components/Home/Home";
 import SignUp from "./Components/SignUp/SignUp";
 import Login from "./Components/Login/Login";
 import ProductDetail from "./Components/ProductDetail/ProductDetail";
+import { ToastContainer, toast } from "react-toastify";
+import { Provider } from "react-redux";
+import store from "../src/Components/Redux/store";
+import Cart from "./Components/Cart/Cart";
 
 const router = createBrowserRouter([
   {
@@ -30,12 +34,19 @@ const router = createBrowserRouter([
         path: "/products/:id",
         element: <ProductDetail />,
       },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <ToastContainer />
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );

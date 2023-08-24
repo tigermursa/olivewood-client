@@ -4,7 +4,7 @@ import image1 from "../../../../public/spacejoy-2d1k_A-nrY8-unsplash (1).jpg";
 
 const ParallaxImage = () => {
   return (
-    <div>
+    <div style={{ width: "1280px" }} className="mx-auto">
       <Parallax bgImage={image1} strength={800}>
         <div style={{ height: 300 }}>
           {" "}

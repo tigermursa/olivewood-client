@@ -10,9 +10,9 @@ const Cart = () => {
   const removeToCart = (id) => {
     dispatch(remove(id));
   };
-
+  console.log(cartProducts);
   return (
-    <div className="overflow-x-auto p-4 pb-56">
+    <div className="overflow-x-auto p-4 pb-56 mx-auto" style={{ width: "1280px" }}>
       <table className="table">
         {/* head */}
         {cartProducts.length > 0 ? (
@@ -20,8 +20,7 @@ const Cart = () => {
             <tr>
               <th>Image</th>
               <th>Name</th>
-              <th className="hidden md:block">Price</th>
-              <th className="hidden md:block">Category</th>
+              <th className="">Price</th>
               <th>Quantity</th>
               <th>Total</th>
               <th></th>
@@ -43,18 +42,17 @@ const Cart = () => {
                   <div className="avatar">
                     <div className="mask mask-squircle w-12 h-12">
                       <img
-                        src={product.image}
+                        src={product.product.image}
                         alt="Avatar Tailwind CSS Component"
                       />
                     </div>
                   </div>
                 </div>
               </td>
-              <td>{product.title}</td>
-              <td className="hidden md:block">{product.price}</td>
-              <td className="hidden md:block">{product.category}</td>
-              <td className="text-center">{product.quantity}</td>
-              <td>{product.quantity * product.price}</td>
+              <td>{product.product.title}</td>
+              <td className="">{product.product.price}</td>
+              <td className="">{product.quantity}</td>
+              <td>{product.quantity * product.product.price}</td>
               <td>
                 <button
                   className="btn btn-sm btn-outline"
